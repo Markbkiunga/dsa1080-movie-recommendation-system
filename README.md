@@ -73,3 +73,9 @@ Road accidents are a significant global issue. Predicting the **severity** of ac
 
 1. Clone the repo
 2. Install requirements
+3. Open `notebooks/week1_intro.ipynb` in Jupyter and run cells
+
+---
+
+## 📝 License
+This project is for academic purposes only.
