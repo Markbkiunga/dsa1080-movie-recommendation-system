@@ -22,58 +22,93 @@ By leveraging driver attributes, road conditions, light/weather states, and acci
 
 - **Source**: RTA Accident Dataset (via Kaggle)
 - **Preprocessed File**: `cleaned.csv`
-- **Total Samples**: 12,316
+- **Original Samples**: 12,316
+- **Post-SMOTE Samples**: 31,245 (Balanced)
 - **Features Used**: 97 (after one-hot encoding of 14 categorical variables)
 - **Target Variable**: `Accident_severity` (multiclass: 0, 1, 2)
+
+---
+
+## ⚠️ Class Imbalance & Oversampling
+
+### 🎯 Original Class Distribution:
+
+- **Fatal Injury (2)**: 10,415
+- **Serious Injury (1)**: 1,743
+- **Slight Injury (0)**: 158
+
+This imbalance led to biased predictions toward fatal injuries.
+
+### ✅ SMOTE Applied:
+
+We applied **SMOTE (Synthetic Minority Oversampling Technique)** to balance the classes:
+
+- All classes resampled to **10,415** observations
+- Total dataset after oversampling: **31,245 records**
+- Train-test split: **80/20 stratified**
 
 ---
 
 ## 🔧 Feature Engineering
 
 - One-hot encoding applied to:
-  - `Age_band_of_driver`, `Sex_of_driver`, `Educational_level`, `Driving_experience`,
-  - `Lanes_or_Medians`, `Types_of_Junction`, `Road_surface_type`, `Light_conditions`,
-  - `Weather_conditions`, `Type_of_collision`, `Vehicle_movement`, `Pedestrian_movement`,
-  - `Cause_of_accident`, `Vehicle_driver_relation`
-- Training/testing split: **80/20**
-- Stratification ensured balanced class distribution
+
+  ```
+  Age_band_of_driver, Sex_of_driver, Educational_level, Driving_experience,
+  Lanes_or_Medians, Types_of_Junction, Road_surface_type, Light_conditions,
+  Weather_conditions, Type_of_collision, Vehicle_movement, Pedestrian_movement,
+  Cause_of_accident, Vehicle_driver_relation
+  ```
+
+- All features converted to numeric
+- Split into training (24,996 samples) and testing sets (6,249 samples)
 
 ---
 
 ## 🧠 Models Trained & Evaluated
 
-| Model               | Accuracy   | Precision | Recall     | F1 Score   |
-| ------------------- | ---------- | --------- | ---------- | ---------- |
-| **Random Forest**   | 0.8405     | 0.7545    | 0.8405     | **0.7775** |
-| Logistic Regression | **0.8458** | 0.7153    | **0.8458** | 0.7751     |
-| Decision Tree       | 0.7216     | 0.7462    | 0.7216     | 0.7333     |
+| Model               | Accuracy   | Precision  | Recall     | F1 Score   |
+| ------------------- | ---------- | ---------- | ---------- | ---------- |
+| **Random Forest**   | **0.8896** | **0.8897** | **0.8896** | **0.8890** |
+| Decision Tree       | 0.8317     | 0.8335     | 0.8317     | 0.8284     |
+| Logistic Regression | 0.7323     | 0.7256     | 0.7323     | 0.7268     |
 
 ---
 
-## 🏆 Best Model: **Random Forest**
+## 🏆 Best Model: **Random Forest (After SMOTE)**
 
-Although Logistic Regression had slightly higher accuracy, **Random Forest outperformed** on overall **F1 Score** and **precision**, making it the most balanced and reliable choice for predicting accident severity across all classes.
+The **Random Forest** model, trained on the balanced dataset, achieved the best overall performance across **accuracy, precision, recall, and F1 score**.
 
 ### ✅ Why Random Forest?
 
-- Handles feature interactions and non-linear patterns well
-- Robust to noise and outliers
-- High recall ensures fewer severe accidents are missed
+- Effectively handles categorical and numerical features
+- Captures complex patterns and interactions
+- Resistant to overfitting, especially with many trees
+- Balanced recall across all severity classes
 
 ---
 
-## 📊 Visual Comparison
+## 📊 Visual Evaluation
 
-> See `week5_evaluation_and_reporting.ipynb` for detailed plots of accuracy, precision, recall, and F1-score across all models.
+Bar plots comparing **accuracy, precision, recall, and F1 score** across all models are available in:
+
+📓 `week5_evaluation_and_reporting.ipynb`
 
 ---
 
 ## 👨‍💻 Technologies Used
 
-- Python 3.11.9
-- pandas, scikit-learn, seaborn, matplotlib
+- Python 3.11
+- Libraries: pandas, scikit-learn, imbalanced-learn, seaborn, matplotlib, joblib
 - Jupyter Notebook
-- GitHub for version control
+- Streamlit (for deployment)
+- GitHub (version control)
+
+---
+
+## 🧪 Deployment & Testing
+
+The final Random Forest model and feature list were saved using `joblib` and deployed via a **Streamlit web application**. Users can input accident conditions and receive real-time predictions with class probabilities.
 
 ---
 
@@ -90,20 +125,22 @@ Although Logistic Regression had slightly higher accuracy, **Random Forest outpe
 
 ## 📌 Key Insights
 
-- Slight injuries were the most frequent, but fatal accidents still require attention.
-- Poor lighting, road surface type, and collision angle significantly impact severity.
-- Tree-based models performed better due to the complexity of interactions.
+- Class imbalance significantly hindered original model performance
+- SMOTE dramatically improved the model’s ability to predict **serious and slight injuries**
+- Fatal injuries are still dominant in the original data, emphasizing a need for better road policies
+- Poor visibility, road type, and driver behavior strongly influence accident severity
 
 ---
 
 ## 📦 Repository & Submission
 
-✅ [GitHub Repository Link](https://github.com/Markbkiunga/traffic-accident-severity-prediction)
+✅ [GitHub Repository Link](https://github.com/Markbkiunga/traffic-accident-severity-prediction)  
 📎 Final Deliverables:
 
 - `cleaned.csv`
 - Notebooks: `week1_intro.ipynb` → `week5_evaluation_and_reporting.ipynb`
 - `report.md` (this file)
 - `README.md`
-
----
+- `streamlit_app.py`
+- `models/random_forest_model.pkl`
+- `models/feature_columns.pkl`
