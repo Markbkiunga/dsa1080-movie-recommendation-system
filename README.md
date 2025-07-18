@@ -64,7 +64,7 @@ Road accidents are a significant global issue. Predicting the **severity** of ac
 
 - A trained model predicting accident severity
 - Visual insights on influential factors
-- Final report (PDF)
+- Final report
 - GitHub repository with all assets
 
 ---
