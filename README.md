@@ -73,9 +73,15 @@ Road accidents are a significant global issue. Predicting the **severity** of ac
 
 1. Clone the repo
 2. Install requirements
-3. Open `notebooks/week1_intro.ipynb` in Jupyter and run cells
+3. Run the individual notebooks
+4. Run the Streamlit app using the code below
+
+```bash
+streamlit run streamlit_app.py
+```
 
 ---
 
 ## 📝 License
+
 This project is for academic purposes only.
