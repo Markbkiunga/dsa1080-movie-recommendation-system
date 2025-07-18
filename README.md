@@ -34,6 +34,9 @@ Road accidents are a significant global issue. Predicting the **severity** of ac
 - scikit-learn
 - GitHub
 - Jupyter Notebook
+- streamlit
+- joblib
+- imbalanced-learn
 
 ---
 
