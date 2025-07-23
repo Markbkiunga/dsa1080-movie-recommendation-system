@@ -115,11 +115,10 @@ The final Random Forest model and feature list were saved using `joblib` and dep
 ## 👥 Team Members
 
 - **Mark Brian** – Team Lead, Integration & Reporting
-- Member A – Data Preprocessing & Cleaning
-- Member B – Exploratory Data Analysis
-- Member C – Feature Engineering
-- Member D – Model Development
-- Member E – Evaluation & Visualization
+- Michelle Kere – Data Preprocessing & Cleaning
+- Ridwan Bare – Exploratory Data Analysis
+- Mitari – Feature Engineering
+- Precious Imali and Joy Splendor – Model Development, Evaluation & Visualization
 
 ---
 
