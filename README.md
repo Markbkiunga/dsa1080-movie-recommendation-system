@@ -14,7 +14,7 @@ Road accidents are a significant global issue. Predicting the **severity** of ac
 
 ## 📂 Dataset
 
-- **Source:** [Traffic Accident Dataset on Kaggle](https://www.kaggle.com/)
+- **Source:** [Traffic Accident Dataset on Kaggle](https://www.kaggle.com/datasets/saurabhshahane/road-traffic-accidents)
 - **Features:**
   - Weather Condition
   - Road Type
@@ -23,40 +23,29 @@ Road accidents are a significant global issue. Predicting the **severity** of ac
   - Time of Day
   - Accident Location
   - ... more
-- **Target variable:** `Severity` (e.g., Minor, Serious, Fatal)
+- **Target variable:** `Accident_severity` (e.g., Minor, Serious, Fatal)
 
 ---
 
 ## 📊 Tools & Technologies
 
 - Python
-- pandas, seaborn, matplotlib
-- scikit-learn
-- GitHub
+- streamlit
 - Jupyter Notebook
-
----
-
-## 📅 Project Timeline
-
-| Week | Focus                           |
-| ---- | ------------------------------- |
-| 1    | Dataset Collection & Setup      |
-| 2    | Data Cleaning & EDA             |
-| 3    | Feature Engineering             |
-| 4    | Model Training                  |
-| 5    | Evaluation, Report & Deployment |
-
----
+- pandas
+- scikit-learn
+- joblib
+- imbalanced-learn
+- matplotlib
+- seaborn
 
 ## 👥 Team Members
 
-- **[Your Name]** – Team Lead
-- [Member A] – Data Manager
-- [Member B] – EDA & Visualization
-- [Member C] – Feature Engineer
-- [Member D] – Model Developer
-- [Member E] – Evaluator & Reporter
+- **Mark Brian** – Team Lead, Reporting and Integration
+- **Michelle Kere** –Data Loading & Dataset Summary
+- **Ridwan Bare** – Exploratory Data Analysis
+- **Mitari** – Feature Engineering
+- **Precious Imali** and **Joy Splendor** – Training, Evaluation and Balancing with SMOTE
 
 ---
 
@@ -64,7 +53,7 @@ Road accidents are a significant global issue. Predicting the **severity** of ac
 
 - A trained model predicting accident severity
 - Visual insights on influential factors
-- Final report (PDF)
+- Final report
 - GitHub repository with all assets
 
 ---
@@ -72,10 +61,22 @@ Road accidents are a significant global issue. Predicting the **severity** of ac
 ## 🧪 How to Run
 
 1. Clone the repo
-2. Install requirements
-3. Open `notebooks/week1_intro.ipynb` in Jupyter and run cells
+2. Create a virtual environment using python version 3.11.9 preferably for packages compatibility
+3. Install requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the individual notebooks
+5. Run the Streamlit app using the code below
+
+```bash
+streamlit run streamlit_app.py
+```
 
 ---
 
 ## 📝 License
+
 This project is for academic purposes only.
