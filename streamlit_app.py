@@ -8,6 +8,7 @@ feature_columns = joblib.load('./models/feature_columns.pkl')
 
 # Define input form
 st.title("🚦 Traffic Accident Severity Prediction")
+st.markdown("[View on GitHub](https://github.com/Markbkiunga/traffic-accident-severity-prediction)", unsafe_allow_html=True)
 st.write("Fill in the information below to predict accident severity:")
 
 with st.form("severity_form"):
