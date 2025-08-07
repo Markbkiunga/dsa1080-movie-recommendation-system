@@ -120,7 +120,7 @@ Bar plots comparing **accuracy, precision, recall, and F1 score** across all mod
 │   ├── week2_eda.ipynb
 │   ├── week3_features.ipynb
 │   └── week4_teb.ipynb
-├── .python-version
+├── .python-version         # Python version
 ├── README.md               # Project documentation
 ├── report.md               # This report
 ├── requirements.txt        # Python dependencies
