@@ -111,18 +111,16 @@ Bar plots comparing **accuracy, precision, recall, and F1 score** across all mod
 
 ```
 .
-├── data/                    # Contains all dataset files
-│   ├── raw/                # Raw dataset files
-│   └── processed/          # Processed data files
+├── data/                    # Contains datasets
 ├── models/                 # Trained models and feature columns
 │   ├── random_forest_model.pkl
 │   └── feature_columns.pkl
 ├── notebooks/              # Jupyter notebooks for analysis
-│   ├── EDA.ipynb
-│   ├── data_cleaning.ipynb
-│   ├── feature_engineering.ipynb
-│   └── model_training.ipynb
-├── .gitignore
+│   ├── week1_intro.ipynb
+│   ├── week2_eda.ipynb
+│   ├── week3_features.ipynb
+│   └── week4_teb.ipynb
+├── .python-version
 ├── README.md               # Project documentation
 ├── report.md               # This report
 ├── requirements.txt        # Python dependencies
