@@ -88,15 +88,6 @@ The **Random Forest** model, trained on the balanced dataset, achieved the best 
 
 ---
 
-## 📊 Visual Evaluation
-
-Bar plots comparing **accuracy, precision, recall, and F1 score** across all models are available in the notebooks:
-
-- `notebooks/EDA.ipynb` - Initial data exploration
-- `notebooks/model_training.ipynb` - Model evaluation and comparison
-
----
-
 ## 👨‍💻 Technologies Used
 
 - Python 3.11
@@ -165,15 +156,7 @@ This project successfully developed a machine learning model that can predict tr
 
 ---
 
-## 📦 Repository & Submission
+## 📦 Repository & Report
 
 ✅ [GitHub Repository Link](https://github.com/Markbkiunga/traffic-accident-severity-prediction)  
-📎 Final Deliverables:
-
-- `data/processed/cleaned.csv`
-- Notebooks: `notebooks/week1_intro.ipynb` → `notebooks/week4_teb.ipynb`
-- `report.md` (this file)
-- `README.md`
-- `streamlit_app.py`
-- `models/random_forest_model.pkl`
-- `models/feature_columns.pkl`
+📝 [Submission Report](report.md)
